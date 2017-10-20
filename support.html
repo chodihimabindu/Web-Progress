@@ -6,9 +6,13 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 </head>
 <style>
-    body{
-    background: url("imgs/dw.jpg") no-repeat center center fixed;
-    background-size: cover;
+    body,html{
+
+      background: url("imgs/dw.jpg") no-repeat center center fixed;
+
+
+      background-size: cover;
+     ;
 
 
 	 }
@@ -203,28 +207,42 @@
          margin: 0;
 }
 
-.introwatch{
-	  float:right;
-	  height:100px;
-	  width:337px;
-	  border-radius:50px;
-	  margin-top:30px;
-	  margin-right:0%;
 
+button.accordion {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
 }
 
-.textboxside{
-	 width: 600px;
-         padding: 10px;
-         border: 1px solid gray;
-         margin: 0;
-	 float:left;
-         font-family:inherit;
-	 color:white;
-	 margin-top:30px;
-	 margin-left:10%;
-	 height:273px;
+button.accordion.active, button.accordion:hover {
+    background-color: #ccc;
+}
 
+button.accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: "\2212";
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
 }
 
 </style>
@@ -246,9 +264,9 @@
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li class="active"><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-          <li ><a href="#">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				<li class="active"><a href="#">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+          <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 
           <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
@@ -256,7 +274,7 @@
   				<li ><a href="#">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
   				<li ><a href="#">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conclusion <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conclusion<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
@@ -274,29 +292,45 @@
 <div class="main">
 <center>
   <div class="introtest">
-    Introduction
+    Support
   </div>
 
 </br>
-<div style="color:white;" class="textbox">
-</br>
 
-  <p>Bluetooth is a standard for short-range wireless communication between devices. Bluetooth "Classic" defines a set of binary protocols and supports speeds up to about 24Mbps. Bluetooth 4.0 introduced a new "Low Energy" mode known as "Bluetooth Smart", BLE, or just LE which is limited to about 1Mbps but allows devices to leave their transmitters off most of the time. BLE provides most of its functionality through key/value pairs provided by the Generic Attribute Profile (GATT).</p>
+
+<div>
+
+<button class="accordion">Requirements</button>
+<div class="panel">
+  <p>•	Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</p>
+  <p>•	Next we need to have chrome browser in those devices with a version not lower than 53, because these Bluetooth web api is supported only in chrome with version more than 53 as of now.</p>
+  <p>•	The chrome://flags/#enable-experimental-web-platform-features flag must be enabled on Linux and Windows. In Chrome OS, Android, and Mac, the GATT Communication API is available without any flag.</p>
+  <p>•	Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</p>
+</div>
+
+<button class="accordion">OS compatibility</button>
+<div class="panel">
+  <p>•	Android: Requires Android 6.0 Marshmallow or later.</p>
+<p>•	Mac: Requires OS X Yosemite or later.</p>
+      <p>o	Some MacBooks may not work: Check "About this Mac" / "System Report" / "Bluetooth" and verify that Low Energy is supported.</p>
+<p>•	Linux: Requires Kernel 3.19+ and BlueZ 5.41+ installed. Read How to get Chrome Web Bluetooth working on Linux.</p>
+<p>o	Note that Bluetooth daemon needs to run with experimental interfaces if BlueZ version is lower than 5.43: sudo /usr/sbin/bluetoothd -E</p>
+<p>•	Windows: Requires Windows 8.1 or later.</p>
+<p>o	To discover devices the user hasn't yet manually paired, requires Windows 10.</p>
+<p>o	A third-party Windows 10 Polyfill (Chrome Extension + Native Executable) has been created while Windows support is not implemented yet.</p>
+
+</div>
+
+<button class="accordion">Unsupported platforms</button>
+<div class="panel">
+  <p>•	Android WebView: Will be supported in the future.</p>
+<p>•	iOS: Uses the web exposed APIs as provided by the WKWebView, no implementation planned in the Chromium codebase.</p>
+<p><b>Note:</b> WebBLE is an app for iOS that supports the GATT Communication API. It was created initially for the Puck.js project.</p>
+
+</div>
+
 </div>
 </center>
-
-<div class="textboxside">
-</br>
-<p>BLE defines multiple roles that devices can play. The Broadcaster and Observer roles are for transmitter- and receiver-only applications, respectively. Devices acting in the Peripheral role can receive connections, and devices acting in the Central role can connect to Peripheral devices. A device acting in either the Peripheral or Central role can host a GATT Server, which exposes a hierarchy of Services, Characteristics, and Descriptors.</p>
-</div>
-
-
-<div class="introwatch">
-<img src="imgs/bluetooth.jpg"  />
-</div>
-
-
-
 <!-- Content Here -->
 </div>
 
@@ -330,5 +364,22 @@
   			htmlbodyHeightUpdate()
 		});
 	});
+
+
+  var acc = document.getElementsByClassName("accordion");
+  var i;
+
+  for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function() {
+      this.classList.toggle("active");
+      var panel = this.nextElementSibling;
+      if (panel.style.maxHeight){
+        panel.style.maxHeight = null;
+      } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+      }
+    }
+  }
+
 </script>
 </hml>

@@ -6,9 +6,16 @@
 <script src="js/jquery-3.1.1.min.js"></script>
 </head>
 <style>
-    body{
-    background: url("imgs/dw.jpg") no-repeat center center fixed;
-    background-size: cover;
+    body,html{
+
+		height: 100%;
+    background-image: url("imgs/dw.jpg");
+    background-repeat: no-repeat;
+    height: 98%;
+    width: 100%;
+    background-size: 1500px 650px;
+    background-repeat: no-repeat;
+  //  overflow:hidden;
 
 
 	 }
@@ -125,7 +132,7 @@
 		}
     .navbar-inverse {
       background-color: #463050;
-      border-color: #463050;
+      border-color: #581354;
       background-image:yt.jpg
     }
 
@@ -189,8 +196,8 @@
 	}
 
 .introtest{
-          color:#32d220;
-          font-size: 35px;
+          color:white;
+          font-size: 30px;
           font-family:inherit;
 
 }
@@ -201,30 +208,6 @@
          padding: 10px;
          border: 5px solid gray;
          margin: 0;
-}
-
-.introwatch{
-	  float:right;
-	  height:100px;
-	  width:337px;
-	  border-radius:50px;
-	  margin-top:30px;
-	  margin-right:0%;
-
-}
-
-.textboxside{
-	 width: 600px;
-         padding: 10px;
-         border: 1px solid gray;
-         margin: 0;
-	 float:left;
-         font-family:inherit;
-	 color:white;
-	 margin-top:30px;
-	 margin-left:10%;
-	 height:273px;
-
 }
 
 </style>
@@ -246,15 +229,13 @@
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li class="active"><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-          <li ><a href="#">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				<li ><a href="#">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
-
-          <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-  				<li><a href="#">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-  				<li ><a href="#">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-  				<li ><a href="#">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        <li class="active"><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li><a href="#">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li ><a href="#">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+        <li ><a href="#">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conclusion <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
@@ -273,30 +254,18 @@
 </nav>
 <div class="main">
 <center>
-  <div class="introtest">
-    Introduction
+  <div style="color:#33cc33; font-size:35px;">
+  Gatt Services
   </div>
-
 </br>
 <div style="color:white;" class="textbox">
 </br>
-
-  <p>Bluetooth is a standard for short-range wireless communication between devices. Bluetooth "Classic" defines a set of binary protocols and supports speeds up to about 24Mbps. Bluetooth 4.0 introduced a new "Low Energy" mode known as "Bluetooth Smart", BLE, or just LE which is limited to about 1Mbps but allows devices to leave their transmitters off most of the time. BLE provides most of its functionality through key/value pairs provided by the Generic Attribute Profile (GATT).</p>
-</div>
-</center>
-
-<div class="textboxside">
 </br>
-<p>BLE defines multiple roles that devices can play. The Broadcaster and Observer roles are for transmitter- and receiver-only applications, respectively. Devices acting in the Peripheral role can receive connections, and devices acting in the Central role can connect to Peripheral devices. A device acting in either the Peripheral or Central role can host a GATT Server, which exposes a hierarchy of Services, Characteristics, and Descriptors.</p>
+  <p>There is an explosion of electronic devices nowadays, and with many of them, it’s possible to interact with them via Bluetooth Low Energy, or BLE. However, installing a separate app for interacting with every single bluetooth gadget is impractical. What if we could communicate with them through a web browser? The Web Bluetooth API aims to do exactly that with a promise-based API, which allows you to interact with many BLE enabled devices. This is also great for companies intending to launch new gadgets, as instead of spending time and money on developing a separate app for multiple platforms, they can offer interaction with their gadget in a cross-platform manner, as it could be controlled directly from a web page.</p>
 </div>
 
 
-<div class="introwatch">
-<img src="imgs/bluetooth.jpg"  />
-</div>
-
-
-
+</center>
 <!-- Content Here -->
 </div>
 

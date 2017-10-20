@@ -4,11 +4,16 @@
 <link rel="stylesheet" href="css/mai.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.1.1.min.js"></script>
+
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </head>
 <style>
-    body{
-    background: url("imgs/dw.jpg") no-repeat center center fixed;
-    background-size: cover;
+    body,html{
+
+      background: url("imgs/dw.jpg") no-repeat center center fixed;
+      background-size: cover;
 
 
 	 }
@@ -203,30 +208,6 @@
          margin: 0;
 }
 
-.introwatch{
-	  float:right;
-	  height:100px;
-	  width:337px;
-	  border-radius:50px;
-	  margin-top:30px;
-	  margin-right:0%;
-
-}
-
-.textboxside{
-	 width: 600px;
-         padding: 10px;
-         border: 1px solid gray;
-         margin: 0;
-	 float:left;
-         font-family:inherit;
-	 color:white;
-	 margin-top:30px;
-	 margin-left:10%;
-	 height:273px;
-
-}
-
 </style>
 
 <body>
@@ -246,17 +227,16 @@
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li class="active"><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-          <li ><a href="#">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        <li class="active"><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
-
-          <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-  				<li><a href="#">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-  				<li ><a href="#">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-  				<li ><a href="#">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				<<li><a href="#">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li><a href="#">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li ><a href="#">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				<li ><a href="#">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conclusion <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conclusion<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
@@ -274,29 +254,148 @@
 <div class="main">
 <center>
   <div class="introtest">
-    Introduction
+  Compartability
   </div>
 
 </br>
-<div style="color:white;" class="textbox">
+
+
+  <div class="container" style="color:white; font-size:30px;">
+    <h2>Version Available</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Browser</th>
+          <th>Introduced</th>
+          <th>Present</th>
+          <th>Enhancement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                <td> Used</td>
+                <td>in</td>
+                <td>Working</td>
+                <td> Info</td>
+              </tr>
+        <tr class="success">
+          <td>Chrome</td>
+          <td>Chrome 56</td>
+          <td>Chrome 60</td>
+          <td>Yes</td>
+        </tr>
+        <tr class="danger">
+          <td>Safari</td>
+          <td>Not Supported </td>
+          <td>Not Supported </td>
+          <td>Not Supported </td>
+        </tr>
+        <tr class="info">
+          <td>Fire Fox</td>
+          <td>Not Supported </td>
+          <td>Not Supported </td>
+          <td>Not Supported </td>
+        </tr>
+        <tr class="warning">
+          <td>Opera</td>
+          <td>Opera 43</td>
+          <td>Opera 47</td>
+          <td>No</td>
+        </tr>
+        <tr class="active">
+          <td>Microsoft Edge</td>
+          <td>Not Supported </td>
+          <td>Not Supported </td>
+          <td>Not Supported </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
 </br>
 
-  <p>Bluetooth is a standard for short-range wireless communication between devices. Bluetooth "Classic" defines a set of binary protocols and supports speeds up to about 24Mbps. Bluetooth 4.0 introduced a new "Low Energy" mode known as "Bluetooth Smart", BLE, or just LE which is limited to about 1Mbps but allows devices to leave their transmitters off most of the time. BLE provides most of its functionality through key/value pairs provided by the Generic Attribute Profile (GATT).</p>
+  <div class="container" style="color:white; font-size:30px;">
+    <h2>Operating System</h2>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Browser</th>
+          <th>Windows</th>
+          <th>Linux</th>
+          <th>IOS(MAC)</th>
+          <th>Android 6 (Marshmallow)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+                <td> Used</td>
+                <td>in</td>
+                <td>Working</td>
+                <td> Info</td>
+              </tr>
+        <tr class="success">
+          <td>Chrome</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+        </tr>
+        <tr class="danger">
+          <td>Safari</td>
+          <td>Available</td>
+          <td>Not Available </td>
+          <td>Available</td>
+          <td>Not Available </td>
+        </tr>
+        <tr class="info">
+          <td>Fire Fox</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+        </tr>
+        <tr class="warning">
+          <td>Opera</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+          <td>Available</td>
+        </tr>
+        <tr class="active">
+          <td>Microsoft Edge</td>
+          <td>Available</td>
+          <td>Not Available </td>
+          <td>Not Available </td>
+          <td>Not Available </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+
+<div style="color:#867979; font-size:30px;">
+<h3>  Compatibility with Web Bluetooth Google chrome browser has all built in features required for web Bluetooth API </h3>
 </div>
+
 </center>
-
-<div class="textboxside">
 </br>
-<p>BLE defines multiple roles that devices can play. The Broadcaster and Observer roles are for transmitter- and receiver-only applications, respectively. Devices acting in the Peripheral role can receive connections, and devices acting in the Central role can connect to Peripheral devices. A device acting in either the Peripheral or Central role can host a GATT Server, which exposes a hierarchy of Services, Characteristics, and Descriptors.</p>
+</br>
+<div style="color:#a65959; font-size:30px;">
+  Reference:
 </div>
+</br>
+<div style="color:#996666; font-size:20px;">
+https://www.chromestatus.com/feature/5264933985976320 </br>
+https://whatwebcando.today/bluetooth.html </br>
+https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webbluetooth/?q=blu </br>
+https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md </br>
 
-
-<div class="introwatch">
-<img src="imgs/bluetooth.jpg"  />
 </div>
-
-
-
 <!-- Content Here -->
 </div>
 
