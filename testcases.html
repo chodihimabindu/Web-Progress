@@ -4,12 +4,14 @@
 <link rel="stylesheet" href="css/mai.css">
 <script src="js/bootstrap.min.js"></script>
 <script src="js/jquery-3.1.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
     body,html{
 
 		background: url("imgs/dw.jpg") no-repeat center center fixed;
         background-size: cover;
+        font-family: Verdana,sans-serif;margin:0
 
 
 	 }
@@ -204,6 +206,104 @@
          margin: 0;
 }
 
+
+
+
+* {box-sizing:border-box}
+body {font-family: Verdana,sans-serif;margin:0}
+.mySlides {display:none}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 60s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 50s;
+  animation-name: fade;
+  animation-duration: 500s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .5} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .5} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 </style>
 
 <body>
@@ -226,8 +326,8 @@
 				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
 				<li ><a href="#">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
-        <li class="active"><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-        <li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li ><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li class="active"><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
         <li ><a href="#">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
         <li ><a href="#">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<li class="dropdown">
@@ -249,17 +349,104 @@
 <div class="main">
 <center>
   <div style="color:#33cc33; font-size:35px;">
-  Gatt Services
+  Test Cases
   </div>
 </br>
 <div style="color:white;" class="textbox">
 </br>
 </br>
-  <p>There is an explosion of electronic devices nowadays, and with many of them, it’s possible to interact with them via Bluetooth Low Energy, or BLE. However, installing a separate app for interacting with every single bluetooth gadget is impractical. What if we could communicate with them through a web browser? The Web Bluetooth API aims to do exactly that with a promise-based API, which allows you to interact with many BLE enabled devices. This is also great for companies intending to launch new gadgets, as instead of spending time and money on developing a separate app for multiple platforms, they can offer interaction with their gadget in a cross-platform manner, as it could be controlled directly from a web page.</p>
+  <p>Initially started working with sample examples from web and tried to execute it, but we were not able to discover devices. Then noticed that in code they have applied filters so it is searching for devices that match the given filters so tried removing filters, made it to discover all devices and found devices. When we select a device and click on pair button in the dialog box it was showing error asconnectGATT () was not a function. Then we resolved this error by changing it to device. gatt. connect ()function.</p>
+</div>
+
+<br/>
+
+<div style="color:white;" class="textbox">
+</br>
+</br>
+  <p>Then we thought GATT server needs be started manually and started to work on it. But we found that every Bluetooth device with version 4.0 will have BLE support and no need to start GATT server manually.
+When tried on laptop we got list of available devices and when we select a device and click on pair button it shows device not supported error.
+Now we are working on why it showing as device not supported error.</p>
+</div>
+
+<br/>
+
+<div style="color:white;" class="textbox">
+</br>
+</br>
+  <p>The above error was due to compatibility regarding OS version that was installed in our system, we need to have Windows 10 Creators Update. It should display: "Version 1703 (OS Build 15063.413)" or higher.
+We tried installing Windows 10 Creators UpdateOS that was compatible using VMware in windows and Ubuntu but we were not able to do it.
+Then we choose Ubuntu as our platform for working on it because it was also having wire shark a tool through which we can capture packets that are being transferred and analyse them.
+We installed Ubuntu and then installed Wireshark in it and started to work on Web Bluetooth API. When we tried our examples on Ubuntu machine, we were not able get the values displayed on browser but Wireshark was able to capture the packets.
+Then we got to know to that we need to update Bluetooth version to make it support all the gatt features, so we updated Bluetooth version and found it to be working fine.</p>
+</div>
+
+</center>
+
+
+</br>
+</br>
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 6</div>
+  <img src="imgs/index.png" style="width:100%">
+  <div class="text">Getting Start to pair Devices by Clicking Detect Devices </div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 6</div>
+  <img src="imgs/popup.png" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 6</div>
+  <img src="imgs/detectDevices.png" style="width:100%">
+  <div class="text">Caption Three</div>
 </div>
 
 
-</center>
+<div class="mySlides fade">
+  <div class="numbertext">4 / 6</div>
+  <img src="imgs/getstatus.png" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+
+
+
+<div class="mySlides fade">
+  <div class="numbertext">5 / 6</div>
+  <img src="imgs/processing.png" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">6 / 6</div>
+  <img src="imgs/bateryinfo.png" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+
+
+<a class="prev" onclick="plusSlides(-5)">&#10094;</a>
+<a class="next" onclick="plusSlides(5)">&#10095;</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  
+</div>
 <!-- Content Here -->
 </div>
 
@@ -293,5 +480,35 @@
   			htmlbodyHeightUpdate()
 		});
 	});
+
+
+
+
+	var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
 </script>
 </hml>
