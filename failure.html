@@ -8,14 +8,8 @@
 <style>
     body,html{
 
-		height: 100%;
-    background-image: url("imgs/dw.jpg");
-    background-repeat: no-repeat;
-    height: 98%;
-    width: 100%;
-    background-size: 1500px 650px;
-    background-repeat: no-repeat;
-  //  overflow:hidden;
+      background: url("imgs/dw.jpg") no-repeat center center fixed;
+      background-size: cover;
 
 
 	 }
@@ -230,28 +224,20 @@
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
 				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-        <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
+        <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
 
 				<<li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-        <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-        <li class="active" ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
+				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+        <li class="active" ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-down"></span></a></li>
+				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+        <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">COnclusion <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
-					<ul class="dropdown-menu forAnimate" role="menu">
-						<li><a href="#">Action</a></li>
-						<li><a href="#">Another action</a></li>
-						<li><a href="#">Something else here</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-						<li><a href="#">One more separated link</a></li>
-					</ul>
-				</li>
+
+
+
 			</ul>
 		</div>
 	</div>
@@ -262,12 +248,27 @@
     Failure Story
   </div>
 
-<div style="color:white;" class="textbox">
-</br>
-</br>
-  <p>There is an explosion of electronic devices nowadays, and with many of them, it’s possible to interact with them via Bluetooth Low Energy, or BLE. However, installing a separate app for interacting with every single bluetooth gadget is impractical. What if we could communicate with them through a web browser? The Web Bluetooth API aims to do exactly that with a promise-based API, which allows you to interact with many BLE enabled devices. This is also great for companies intending to launch new gadgets, as instead of spending time and money on developing a separate app for multiple platforms, they can offer interaction with their gadget in a cross-platform manner, as it could be controlled directly from a web page.</p>
+<div style="color:#2aec09; font-size:15px;">
+  <h2>Week-1</h2>
+</div>  <br/>
+<div>
+  <p style="color:#1dc5a8; font-size:25px;">No Bluetooth dongle driver Support. </br>
+Software’s requirements issues like Version that supports Webbluetooth API. </br>
+Software compatibility errors like  softwares required 32bit where softwares are 64bit  </br></p>
 </div>
 
+<br/><br/>
+
+<div style="color:#2aec09; font-size:15px;">
+  <h2>Week-2</h2>
+</div>  <br/>
+<div>
+  <p style="color:#1dc5a8; font-size:25px;">Operating system version issues due to version unavailability in Windows Ubuntu was choosen as Plateform. <br/>
+Ubuntu Operating system was 32bit and  has to convert it to  64bit for software needs. <br/>
+Drivers in Ubuntu has to be updated  according to Bluetooth GATT Server and Specific pattern is suppose to be followed. </br>
+In Ubuntu Google Chrome availability was only 45v, but the requirement was above version 60 to be needed and Beta-version of chrome is used. </br>
+After platform setting there were few minor GATT server issues.  </br></p>
+</div>
 
 </center>
 <!-- Content Here -->
