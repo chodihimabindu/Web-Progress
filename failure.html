@@ -8,11 +8,14 @@
 <style>
     body,html{
 
-      background: url("imgs/dw.jpg") no-repeat center center fixed;
-
-
-      background-size: cover;
-     ;
+		height: 100%;
+    background-image: url("imgs/dw.jpg");
+    background-repeat: no-repeat;
+    height: 98%;
+    width: 100%;
+    background-size: 1500px 650px;
+    background-repeat: no-repeat;
+  //  overflow:hidden;
 
 
 	 }
@@ -129,7 +132,7 @@
 		}
     .navbar-inverse {
       background-color: #463050;
-      border-color: #463050;
+      border-color: #581354;
       background-image:yt.jpg
     }
 
@@ -193,8 +196,8 @@
 	}
 
 .introtest{
-          color:#32d220;
-          font-size: 35px;
+          color:white;
+          font-size: 30px;
           font-family:inherit;
 
 }
@@ -205,44 +208,6 @@
          padding: 10px;
          border: 5px solid gray;
          margin: 0;
-}
-
-
-button.accordion {
-    background-color: #eee;
-    color: #444;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 15px;
-    transition: 0.4s;
-}
-
-button.accordion.active, button.accordion:hover {
-    background-color: #ccc;
-}
-
-button.accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-}
-
-button.accordion.active:after {
-    content: "\2212";
-}
-
-div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
 }
 
 </style>
@@ -263,19 +228,20 @@ div.panel {
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
-				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
 				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li class="active"><a href="#">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
-          <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+        <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
+
+				<<li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+        <li class="active" ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
+				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 
-          <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-          <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-  				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-          <li ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-  				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Conclusion<span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">COnclusion <span class="caret"></span><span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-cog"></span></a>
 					<ul class="dropdown-menu forAnimate" role="menu">
 						<li><a href="#">Action</a></li>
 						<li><a href="#">Another action</a></li>
@@ -293,44 +259,16 @@ div.panel {
 <div class="main">
 <center>
   <div class="introtest">
-    Support
+    Failure Story
   </div>
 
+<div style="color:white;" class="textbox">
 </br>
-
-
-<div>
-
-<button class="accordion">Requirements</button>
-<div class="panel">
-  <p>•	Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</p>
-  <p>•	Next we need to have chrome browser in those devices with a version not lower than 53, because these Bluetooth web api is supported only in chrome with version more than 53 as of now.</p>
-  <p>•	The chrome://flags/#enable-experimental-web-platform-features flag must be enabled on Linux and Windows. In Chrome OS, Android, and Mac, the GATT Communication API is available without any flag.</p>
-  <p>•	Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</p>
+</br>
+  <p>There is an explosion of electronic devices nowadays, and with many of them, it’s possible to interact with them via Bluetooth Low Energy, or BLE. However, installing a separate app for interacting with every single bluetooth gadget is impractical. What if we could communicate with them through a web browser? The Web Bluetooth API aims to do exactly that with a promise-based API, which allows you to interact with many BLE enabled devices. This is also great for companies intending to launch new gadgets, as instead of spending time and money on developing a separate app for multiple platforms, they can offer interaction with their gadget in a cross-platform manner, as it could be controlled directly from a web page.</p>
 </div>
 
-<button class="accordion">OS compatibility</button>
-<div class="panel">
-  <p>•	Android: Requires Android 6.0 Marshmallow or later.</p>
-<p>•	Mac: Requires OS X Yosemite or later.</p>
-      <p>o	Some MacBooks may not work: Check "About this Mac" / "System Report" / "Bluetooth" and verify that Low Energy is supported.</p>
-<p>•	Linux: Requires Kernel 3.19+ and BlueZ 5.41+ installed. Read How to get Chrome Web Bluetooth working on Linux.</p>
-<p>o	Note that Bluetooth daemon needs to run with experimental interfaces if BlueZ version is lower than 5.43: sudo /usr/sbin/bluetoothd -E</p>
-<p>•	Windows: Requires Windows 8.1 or later.</p>
-<p>o	To discover devices the user hasn't yet manually paired, requires Windows 10.</p>
-<p>o	A third-party Windows 10 Polyfill (Chrome Extension + Native Executable) has been created while Windows support is not implemented yet.</p>
 
-</div>
-
-<button class="accordion">Unsupported platforms</button>
-<div class="panel">
-  <p>•	Android WebView: Will be supported in the future.</p>
-<p>•	iOS: Uses the web exposed APIs as provided by the WKWebView, no implementation planned in the Chromium codebase.</p>
-<p><b>Note:</b> WebBLE is an app for iOS that supports the GATT Communication API. It was created initially for the Puck.js project.</p>
-
-</div>
-
-</div>
 </center>
 <!-- Content Here -->
 </div>
@@ -365,22 +303,5 @@ div.panel {
   			htmlbodyHeightUpdate()
 		});
 	});
-
-
-  var acc = document.getElementsByClassName("accordion");
-  var i;
-
-  for (i = 0; i < acc.length; i++) {
-    acc[i].onclick = function() {
-      this.classList.toggle("active");
-      var panel = this.nextElementSibling;
-      if (panel.style.maxHeight){
-        panel.style.maxHeight = null;
-      } else {
-        panel.style.maxHeight = panel.scrollHeight + "px";
-      }
-    }
-  }
-
 </script>
 </hml>
