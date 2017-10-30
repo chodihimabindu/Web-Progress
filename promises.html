@@ -18,6 +18,7 @@
 
       background: url("imgs/dw.jpg") no-repeat center center fixed;
       background-size: cover;
+      overflow-x: hidden;
 	 }
 
 	/* remove outer padding */
@@ -74,7 +75,7 @@
 			float: right;
 		}
 
-		/*lets nav bar to be showed on mouseover*/
+		/*nav bar to be showed on mouseover*/
 		nav.sidebar:hover + .main{
 			margin-left: 200px;
 		}
@@ -244,14 +245,13 @@ svg
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
-          <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
-        <li ><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+				<li ><a href="support.html">Compatability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+        <li ><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
         <li  class="active"><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
-          <li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
-          <li ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-down"></span></a></li>
-  				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+          <li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+  				<li ><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
           <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 
@@ -303,161 +303,121 @@ svg
   </div>
 </center>
 
-<div style="color:white; font-size:30px;">
-<h3>  Understanding Promises:</h3>
-</div>
-</br>
-<center>
-<div style="color:white; font-size:20px;" class="textbox">
-
-  "Imagine you are a kid. Your mom promises you that she'll get you a new phone next week." </br>
-
-  You don't know if you will get that phone until next week. Your mom can either really buy you a brand new phone, or stand you up and withhold the phone if she is not happy :(. </br>
-
-  That is a promise. A promise has 3 states. They are: </br>
-
-
-
+<div style="color:#a65959; font-size:30px;">
+  What is a promise?
+</div> </br>
+<div style="color:white; font-size:15px;">
+  <p>A Promise is an object representing the eventual completion or failure of an asynchronous operation. A promise may be created using its constructor.
+     However, most people are consumers of already-created promises returned from functions</p>
+  <p>Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.</p>
 </div>
 
+</br>
 
-<div style="color:white;  font-size:20px;" class="textbox">
-</br>
-</br>
-  <p> Promise is pending: You don't know if you will get that phone until next week.</br>
-  Promise is resolved: Your mom really buy you a brand new phone. </br>
-  Promise is rejected: You don't get a new phone because your mom is not happy. </br></p>
+
+<div style="color:#a65959; font-size:30px;">
+<h3>Real Time Example</h3>
 </div>
-
-</center>
-
 </br>
-</br>
+<div style="color:white; font-size:15px;">
+  Imagine you are a kid. Your mom promises you that she'll get you a new phone next week."
+  You don't know if you will get that phone until next week. Your mom can either really buy you a brand new phone, or stand you up and withhold the phone if she is not happy
+  That is a promise. A promise has 3 states. They are:
+   Promise is pending: You don't know if you will get that phone until next week.
+  Promise is resolved: Your mom really buy you a brand new phone.
+  Promise is rejected: You don't get a new phone because your mom is not happy.
+</div> </br>
 
-
-
-
-<div class="container">
-
-  <ul class="nav nav-tabs">
-    <li class="active" style="color:Black; font-size:20px;"><a style="color:Black; font-size:20px;" href="#home">Creating</a></li>
-    <li><a style="color:Black; font-size:20px;" href="#menu1">Consuming</a></li>
-    <li><a style="color:Black; font-size:20px;" href="#menu2">Chaining</a></li>
-    <li><a  style="color:Black; font-size:20px;" href="#menu3">Short Form</a></li>
-  </ul>
-
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3 style="color:#2aec09">Creating....Promises</h3>
-      <p  style="color:#1dc5a8; font-size:15px;">Let's convert this to JavaScript. <br/>
-
-var isMomHappy = false; <br/>
-
-// Promise               <br/>
-var willIGetNewPhone = new Promise(      <br/>
-    function (resolve, reject) {         </br>
-        if (isMomHappy) {                <br/>
-            var phone = {                </br>
-                brand: 'Samsung',        <br/>
-                color: 'black'           <br/>
-            };                           </br>
-            resolve(phone); // fulfilled     </br>
-        } else {                               </br>
-            var reason = new Error('mom is not happy');   <br/>
-            reject(reason); // reject          </br>
-        }                              </br>
-
-    }                                </br>
-);   </br>
-</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-      <h3 style="color:#2aec09">Consuming Promises</h3>
-      <p style="color:#1dc5a8; font-size:15px;">Now that we have the promise, let's consume it.
-                                           <br/>
-// call our promise                        </br>
-var askMom = function () {                 </br>
-    willIGetNewPhone                        </br>
-        .then(function (fulfilled) {        </br>
-            // yay, you got a new phone     </br>
-            console.log(fulfilled);          </br>
-         // output: { brand: 'Samsung', color: 'black' } </br>
-        })                                   </br>
-        .catch(function (error) {              </br>
-            // oops, mom don't buy it            </br>
-            console.log(error.message);           </br>
-         // output: 'mom is not happy'           </br>
-        });                                      </br>
-};                                         </br>
-askMom();</br>
-     </p>
-    </div>
-    <div id="menu2" class="tab-pane fade">
-      <h3 style="color:#2aec09">Chaining Promises</h3>
-      <p style="color:#1dc5a8; font-size:15px;">Promises are chainable. </br>
-
-Let's say, you, the kid, promise your friend that you will show them the new phone when your mom buy you one. </br>
-
-That is another promise. Let's write it! </br>
-
-.... ...........  </br>
-
-// 2nd promise    </br>
-var showOff = function (phone) {   </br>
-    return new Promise(    </br>
-        function (resolve, reject) {   </br>
-            var message = 'Hey friend, I have a new ' +    </br>
-                phone.color + ' ' + phone.brand + ' phone';    </br>
-
-            resolve(message);  </br>
-        }   </br>
-    );   </br>
-};  </br>
-</p>
+<div style="color:#a65959; font-size:30px;" >
+  Example
+</div></br>
+<div style="color:white; font-size:15px;">
+<p>Old-style function that expects two callbacks, and calls one of them on eventual completion or failure:</p>
+</div>
 
 <div>
-<h4 style="color:#2aec09"> <b> Notes:</b></h4> <p style="color:#1dc5a8; font-size:15px;">In this example, you might realize we didn't call the reject. It's optional.
-We can shorten this sample like using Promise.resolve instead.</p>
+  <pre><code>function successCallback(result) {
+  console.log("It succeeded with " + result);
+}
+
+function failureCallback(error) {
+  console.log("It failed with " + error);
+}
+
+doSomething(successCallback, failureCallback);
+</pre></code>
+</div> </br>
+
+
+<div style="color:white; font-size:15px;">
+  <p>  Modern functions return a promise you can attach your callbacks to instead:</p>
 </div>
-
-    </div>
-    <div id="menu3" class="tab-pane fade">
-      <h3 style="color:#2aec09"> shorten Form, for Chaining Promises</h3>
-      <p style="color:#1dc5a8; font-size:15px;">
-        // 2nd promise <br/>
-var showOff = function (phone) { <br/>
-    var message = 'Hey friend, I have a new ' + <br/>
-                phone.color + ' ' + phone.brand + ' phone'; <br/>
-
-    return Promise.resolve(message); <br/>
-}; <br/>
-  </p>
 
 <div>
-  <h4 style="color:#2aec09">Let's chain the promises. You, the kid can only start the showOff promise after the willIGetNewPhone promise.</h4>   <br/>
-   <p style="color:#1dc5a8; font-size:15px;">// call our promise  <br/>
-var askMom = function () {  <br/>
-    willIGetNewPhone  <br/>
-    .then(showOff) // chain it here  <br/>
-    .then(function (fulfilled) {  <br/>
-            console.log(fulfilled);  <br/>
-         // output: 'Hey friend, I have a new black Samsung phone.'  <br/>
-        })  <br/>
-        .catch(function (error) {  <br/>
-            // oops, mom don't buy it  <br/>
-            console.log(error.message);  <br/>
-         // output: 'mom is not happy'  <br/>
-        });  <br/>
-};
-</p>
-
+  <pre><code>let promise = doSomething();
+promise.then(successCallback, failureCallback);</pre></code>
 </div>
 
-    </div>
-  </div>
-    <hr>
-    <!-- <p class="act"><b>Active Tab</b>: <span></span></p>
-    <p class="prev"><b>Previous Tab</b>: <span></span></p> -->
+<div style="color:white; font-size:15px;">
+<p>…or simply: </p>
+</div>
+
+<div>
+  <pre><code>doSomething().then(successCallback, failureCallback);
+</pre></code>
+</div> <br>
+
+
+
+
+
+
+
+
+
+
+
+<div style="color:#a65959; font-size:30px;" >
+Why Promises:
+</div></br>
+<div style="color:white; font-size:15px;">
+  Unlike old-style passed-in callbacks, a promise comes with some guarantees:
+<ul>
+  <li>Callbacks will never be called before the completion of the current run of the JavaScript event loop.</li>
+  <li>Callbacks added with .then even after the success or failure of the asynchronous operation, will be called, as above.</li>
+  <li>Multiple callbacks may be added by calling .then several times, to be executed independently in insertion order.</li>
+</ul>
+But the most immediate benefit of promises is chaining.
+</div><br/>
+
+
+<div style="color:#a65959; font-size:30px;" >
+Promises in Web Bluetooth API:
+</div></br>
+<div>
+  <pre><code>navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+  .then(device => { /* ... */ })
+  .catch(error => { console.log(error); });
+</pre></code>
+</div>
+<div style="color:white; font-size:15px;">
+  <p>In this requestDevice() will return a device promise which will have device info. Similarly it have many methods like getService(), getCharacteristic() etc  which will return promises.</p>
+</div>
+<div style="color:white; font-size:15px;">
+<h3>  We can check the promiseStatus, promiseValue in console of browser. </h3>
+</div>
+<div>
+  <img src="imgs/promisesimg.gif"/>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Reference Links:
+</div></br>
+<div>
+  <div style="color:#996666; font-size:20px;">
+<a href="https://developers.google.com/web/fundamentals/primers/promises#promises_arrive_in_javascript">https://developers.google.com/web/fundamentals/primers/promises#promises_arrive_in_javascript</a></br>
+<a href="https://scotch.io/tutorials/javascript-promises-for-dummies">https://scotch.io/tutorials/javascript-promises-for-dummies</a> </br>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises</a> </br>
 </div>
 
 

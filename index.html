@@ -8,7 +8,7 @@
 <style>
     body,html{
       background: url("imgs/dw.jpg") no-repeat center center fixed;
-
+      overflow-x: hidden;
 
       background-size: cover;
 
@@ -211,7 +211,7 @@
 .cssload-preloader {
 	font-family: Arial, Tahoma;
 	position: absolute;
-	top : -490px;
+	top : -870px;
 	left: 0px;
 	right: 0px;
 	bottom: 0px;
@@ -493,15 +493,15 @@ span:nth-last-child(3) {
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
-        <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
 
-        <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li ><a href="support.html">Compatability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-Link"></span></a></li>
+
+
+        <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
         <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
-				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
-				<li><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-down"></span></a></li>
-				<li><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+				<li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+
+				<li><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
         <li><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 			</ul>
@@ -540,18 +540,18 @@ span:nth-last-child(3) {
 
 <div style="color:white;" class="textbo">
 
-   <h3>Our Main Aim is That.....<h3>
+   <h3>Our Main Aim is<h3>
 
-  <h1>Interact with Bluetooth devices on the Web<h1>
+  <h1>Interact with Bluetooth devices using Web Browser<h1>
 </div>
 </center>
 <br/>
-<div style="color:white; font-size:25px;">
-  Before we started:
+<div style="color:#a65959; font-size:25px;">
+  Before we start:
 </div>
 </br>
 <div style="color:white; font-size:15px;">
-   Just think that you can interact with your BLE devices with your Web Broswers without installing any S/W means Zero FootPrint. Yes its possible with <i><b>Web Bluetooth APi</b></i> provided by Chrome Browser.
+   Just think that you can interact with your BLE devices with your Web Broswers without installing any S/W (Zero FootPrint). Yes its possible with <i><b>Web Bluetooth APi</b></i> provided by Chrome Browser.
    <br>Your basic knowledge on Bluetooth Low Energy (BLE) and the Generic Attribute Profile (GATT) is enough to achive this.
 </div>
 </br>
@@ -559,30 +559,53 @@ span:nth-last-child(3) {
   Chrome Bluetooth API is on Beta mode and many enthusiastic developers are supporting the same to give a complete package.
   </div>
 </br>
-<ul>
-  <li>
 <div style="color:white; font-size:15px;">
+<ul>
   A subset of the Web Bluetooth API is available from <b><i> Chrome 56 for Chrome OS, Chrome for Android M, and Mac,Windows</b></i>.
   This means you should be able to
-<li>  <br>request and connect to nearby Bluetooth devices, </li>
-<li>  <br>read/write Bluetooth characteristics, </li>
-<li>  <br>receive GATT Notifications,</li>
-  <li><br>know when a Bluetooth device gets disconnected,and even</li>
-  <li><br>read and write to Bluetooth descriptors.</li>
-</div>
+<li>  request and connect to nearby Bluetooth devices, </li>
+<li>  read/write Bluetooth characteristics, </li>
+<li>  receive GATT Notifications,</li>
+  <li>know when a Bluetooth device gets disconnected,and even</li>
+  <li>read and write to Bluetooth descriptors.</li>
 </li>
 </ul>
-</br>
-<div style="color:white; font-size:15px;">
-  On Linux, you still have to go to chrome://flags/#enable-experimental-web-platform-features, enable the highlighted flag, and restart Chrome for now.
-  for windows??
-  mac???
 </div>
+
+</br>
+
+
+<div style="color:#a65959; font-size:25px;">POC:</div> </br>
+<div style="color:white; font-size:15px;">
+  It is a small possbility check that how to interact this Web Bluetooth Api with BLE enabled device(smart phone, Glucometer, Fitness tracker).
+  The web browsers are enabled with Web Bluetooth package and a smart BLE device(glucometer, fitness band or smart phone) are connected through BLE protocol.
+  Then this browser will connect to the GATT server of the target device. Since its a smart device, it should have pre defined services running. Through code we are going to use this service, such a way that information on the device will be transfered to the browser.
+
+</div> </br>
+
+<div style="color:#a65959; font-size:25px;">Bluetooth Low Energy (BLE):</div>
+<div style="color:white; font-size:15px;">
+</br>
+  Bluetooth Low Energy is a wireless personal area network technology developed for healthcare, fitness, beacons, security, and home entertainment industries.
+  <p> BLE is used in smart medical devices to track on the usage of the device and hence it directly helps the patient health.
+    <br>
+  <br>Why BLE? It consumes least amount of battery and works with high efficency.</p>
+  <p>People with chronic medical conditions, like diabetes, it’s very important to take regular blood glucose readings,
+  and keep accurate notes.  Patients must log what their blood sugar level is, when they take insulin and the amount.
+   Low-cost BLE devices in this dosing device and in the instrument will do all this logging for the patient, and, with consent,
+   share this information with the doctor.  This could revolutionize the quality of such a patient’s healthcare management. </p>
+
+</div> </br>
+
+
+<div>
+ <a href="https://www.eetimes.com/document.asp?doc_id=1278968">https://www.eetimes.com/document.asp?doc_id=1278968</a>
+</div> </br>
 
 <div>
 </br>
 </br>
-  <a class="btn btn-primary" href="intro.html">Get Start</a>
+  <a class="btn btn-primary" href="support.html">Get Start</a>
 </div>
 
   <!-- Content Here -->

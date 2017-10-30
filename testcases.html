@@ -13,6 +13,7 @@
 		background: url("imgs/dw.jpg") no-repeat center center fixed;
         background-size: cover;
         font-family: Verdana,sans-serif;margin:0
+        overflow-x: hidden;
 
 
 	 }
@@ -329,14 +330,13 @@ body {font-family: Verdana,sans-serif;margin:0}
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="#">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
-          <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
-        <li ><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+				<li ><a href="support.html">Compatability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+        <li ><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
         <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
-        <li class="active"><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
-        <li ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-down"></span></a></li>
-				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+        <li class="active"><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+				<li ><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
         <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 			</ul>
@@ -345,45 +345,204 @@ body {font-family: Verdana,sans-serif;margin:0}
 </nav>
 <div class="main">
 <center>
-  <div style="color:#33cc33; font-size:35px;">
-  Test Cases
+  <div style="color:RGB(256,256,256); font-size:35px;">
+  HOW IT WORKS
   </div>
-</br>
-<div style="color:white;" class="textbox">
-</br>
-</br>
-  <p>Initially started working with sample examples from web and tried to execute it, but we were not able to discover devices. Then noticed that in code they have applied filters so it is searching for devices that match the given filters so tried removing filters, made it to discover all devices and found devices. When we select a device and click on pair button in the dialog box it was showing error asconnectGATT () was not a function. Then we resolved this error by changing it to device. gatt. connect ()function.</p>
-</div>
-
-<br/>
-
-<div style="color:white;" class="textbox">
-</br>
-</br>
-  <p>Then we thought GATT server needs be started manually and started to work on it. But we found that every Bluetooth device with version 4.0 will have BLE support and no need to start GATT server manually.
-When tried on laptop we got list of available devices and when we select a device and click on pair button it shows device not supported error.
-Now we are working on why it showing as device not supported error.</p>
-</div>
-
-<br/>
-
-<div style="color:white;" class="textbox">
-</br>
-</br>
-  <p>The above error was due to compatibility regarding OS version that was installed in our system, we need to have Windows 10 Creators Update. It should display: "Version 1703 (OS Build 15063.413)" or higher.
-We tried installing Windows 10 Creators UpdateOS that was compatible using VMware in windows and Ubuntu but we were not able to do it.
-Then we choose Ubuntu as our platform for working on it because it was also having wire shark a tool through which we can capture packets that are being transferred and analyse them.
-We installed Ubuntu and then installed Wireshark in it and started to work on Web Bluetooth API. When we tried our examples on Ubuntu machine, we were not able get the values displayed on browser but Wireshark was able to capture the packets.
-Then we got to know to that we need to update Bluetooth version to make it support all the gatt features, so we updated Bluetooth version and found it to be working fine.</p>
-</div>
-
 </center>
-
-
 </br>
 </br>
 
+<div style="color:#7dcbd8; font-size:30px;" >
+User Gesture Required:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>As a security feature, discovering Bluetooth devices with <b><i>navigator.bluetooth.requestDevice </i></b>must be triggered by a user gesture such as a touch or a mouse click. </p>
+</div>
 
+<div style="color:#7dcbd8; font-size:30px;" >
+  Request Bluetooth Devices
+</div> </br>
+<div style="color:white; font-size:15px;">
+  <p>This version of the Web Bluetooth API specification allows websites, running in the Central role,
+     to connect to remote GATT Servers over a BLE connection. It supports communication among devices that implement Bluetooth 4.0 or later. </p>
+  <p>When a website requests access to nearby devices using <b><i> navigator.bluetooth.requestDevice, </i></b>
+     Google Chrome will prompt user with a device chooser where they can pick one device or simply cancel the request.</p>
+</div>
+
+<center>
+<div>
+  <img src="imgs/imggif.gif" />
+</div>
+</center> <br/>
+
+<div style="color:white; font-size:15px;">
+  <p><b><i>requestDevice</i></b> function takes a mandatory Object that defines filters.
+     These filters are used to return only devices that match some advertised Bluetooth GATT services and/or the device name.</p>
+</div> </br>
+
+<div  style="color:#7dcbd8; font-size:30px;">
+  <h3>Example for getting devices advertising battery_service:</h3>
+</div>
+
+<div>
+  <pre><code>
+    navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => { /* ... */ })
+.catch(error => { console.log(error); });
+If your Bluetooth GATT Service is not on the list of the standardized Bluetooth GATT services though, you may provide either the full Bluetooth UUID or a short 16- or 32-bit form.
+navigator.bluetooth.requestDevice({
+  filters: [{
+    services: [0x1234, 0x12345678, '99999999-0000-1000-8000-00805f9b34fb']
+  }]
+})
+.then(device => { /* ... */ })
+.catch(error => { console.log(error); });
+
+  </pre></code>
+</div> <br/>
+
+<div style="color:#7dcbd8; font-size:30px;">
+  <h3>Requesting Bluetooth device based on the device name being advertised with the name filters key<h3>
+</div>
+
+<div>
+  <pre><code>
+    navigator.bluetooth.requestDevice({
+  filters: [{
+    name: 'Francois robot'
+  }],
+  optionalServices: ['battery_service']
+})
+  </pre></code>
+</div></br>
+
+<div style="color:white; font-size:15px;">
+  <p>Finally, instead of filters you can use the acceptAllDevices key to show all nearby Bluetooth devices.</p>
+</div>
+
+<div>
+<pre><code>
+  navigator.bluetooth.requestDevice({
+  acceptAllDevices: true,
+  optionalServices: ['battery_service']
+})
+.then(device => { /* ... */ })
+.catch(error => { console.log(error); });
+</pre></code>
+</div> <br/>
+
+<div style="color:white; font-size:15px;">
+<b>Note:</b> In the above two cases, you will also need to define the optionalServices key to be able to access some services.
+   If you don't, you'll get an error later when trying to access them.
+  <div></br>
+
+<div style="color:#7dcbd8; font-size:30px;">
+Connect to a Bluetooth Device
+</div></br>
+
+
+<div style="color:white; font-size:15px;">
+  <p>requestDevice() will return a device object through which we can connect to Bluetooth remote GATT Server which holds the service and characteristic definitions. Lets see an example.</p>
+</div>
+
+<div>
+<pre><code>navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+  .then(device => {
+    // Human-readable name of the device.
+    console.log(device.name);
+
+    // Attempts to connect to remote GATT Server.
+    return device.gatt.connect();
+  })
+  .then(server => { /* ... */ })
+  .catch(error => { console.log(error); });
+</pre></code>
+</div> <br/>
+
+
+<div style="color:#7dcbd8; font-size:30px;">
+Read a Bluetooth Characteristic </div></br>
+<div style="color:white; font-size:15px;">
+  <p>After connecting to GATT service of device then we will get its service and corresponding characteristic as below.</p>
+</div>
+<div>
+<pre><code>navigator.bluetooth.requestDevice({ filters: [{ services: ['battery_service'] }] })
+.then(device => device.gatt.connect())
+.then(server => {
+  // Getting Battery Service...
+  return server.getPrimaryService('battery_service');
+})
+.then(service => {
+  // Getting Battery Level Characteristic...
+  return service.getCharacteristic('battery_level');
+})
+.then(characteristic => {
+  // Reading Battery Level...
+  return characteristic.readValue();
+})
+.then(value => {
+  console.log('Battery percentage is ' + value.getUint8(0));
+})
+.catch(error => { console.log(error); });
+</pre></code>
+</div> <br/>
+
+<div style="color:white; font-size:15px;">
+  <p><b><i>Note</i></b> that you can also add a characteristicvaluechanged event listener on a characteristic to handle reading its value.
+    Check out <a href="https://googlechrome.github.io/samples/web-bluetooth/read-characteristic-value-changed.html"> Read Characteristic Value Changed Sample </a>to see how to optionally handle upcoming GATT notifications as well.</p>
+</div>
+
+
+<div style="color:#7dcbd8; font-size:30px;">
+Write to a Bluetooth Characteristic</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Writing to a Bluetooth GATT Characteristic is as easy as reading it. This time, let's use the Heart Rate Control Point to reset the value of the Energy Expended field to 0 on a heart rate monitor device.</p>
+</div>
+<div>
+<pre><code>navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
+.then(device => device.gatt.connect())
+.then(server => server.getPrimaryService('heart_rate'))
+.then(service => service.getCharacteristic('heart_rate_control_point'))
+.then(characteristic => {
+  // Writing 1 is the signal to reset energy expended.
+  var resetEnergyExpended = Uint8Array.of(1);
+  return characteristic.writeValue(resetEnergyExpended);
+})
+.then(_ => {
+  console.log('Energy expended has been reset.');
+})
+.catch(error => { console.log(error); });
+</pre></code>
+</div> <br/>
+
+<div style="color:#7dcbd8; font-size:30px;">
+Receive GATT Notifications</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Now, let's see how to be notified when the Heart Rate Measurement characteristic changes on the device</p>
+</div>
+<div>
+<pre><code>navigator.bluetooth.requestDevice({ filters: [{ services: ['heart_rate'] }] })
+.then(device => device.gatt.connect())
+.then(server => server.getPrimaryService('heart_rate'))
+.then(service => service.getCharacteristic('heart_rate_measurement'))
+.then(characteristic => characteristic.startNotifications())
+.then(characteristic => {
+  characteristic.addEventListener('characteristicvaluechanged',
+                                  handleCharacteristicValueChanged);
+  console.log('Notifications have been started.');
+})
+.catch(error => { console.log(error); });
+
+function handleCharacteristicValueChanged(event) {
+  var value = event.target.value;
+  console.log('Received ' + value);
+}
+</pre></code>
+</div> <br/>
+
+
+<div style="color:#7dcbd8; font-size:30px;">
+Getting Battery Level</div></br>
 
 <div class="slideshow-container">
 
@@ -444,8 +603,22 @@ Now we are working on why it showing as device not supported error.</p>
   <span class="dot" onclick="currentSlide(6)"></span>
 
 </div>
-
 <br/>
+
+<div style="color:#a65959; font-size:30px;">
+  Reference:
+</div>
+</br>
+
+
+<div style="color:#996666; font-size:20px;">
+<a href="https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web#libraries">https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web#libraries </a></br>
+<a href="https://dev.opera.com/articles/web-bluetooth-intro/">https://dev.opera.com/articles/web-bluetooth-intro/</a> </br>
+<a href="https://webbluetoothcg.github.io/web-bluetooth/">https://webbluetoothcg.github.io/web-bluetooth/ </a> </br>
+<a href="https://www.w3.org/community/web-bluetooth/">https://www.w3.org/community/web-bluetooth/ </a> </br>
+
+</div>
+
 <!-- Content Here -->
 </div>
 

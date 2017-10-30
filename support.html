@@ -10,6 +10,7 @@
 
       background: url("imgs/dw.jpg") no-repeat center center fixed;
 
+      overflow-x: hidden;
 
       background-size: cover;
      ;
@@ -193,7 +194,7 @@
 	}
 
 .introtest{
-          color:#32d220;
+          color:#7dcbd8;
           font-size: 35px;
           font-family:inherit;
 
@@ -222,7 +223,7 @@ button.accordion {
 }
 
 button.accordion.active, button.accordion:hover {
-    background-color: #ccc;
+    background-color: #f592d7;
 }
 
 button.accordion:after {
@@ -239,7 +240,7 @@ button.accordion.active:after {
 
 div.panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #eac5df;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
@@ -264,16 +265,16 @@ div.panel {
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li ><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li class="active"><a href="#">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
-          <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+				<li class="active"><a href="support.html">Compatability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
 
 
-          <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+
+          <li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
           <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
-  				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
-          <li ><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-down"></span></a></li>
-  				<li ><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+  				<li><a href="testcases.html">How it Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+
+  				<li ><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
           <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 
 			</ul>
@@ -283,9 +284,9 @@ div.panel {
 <div class="main">
 <center>
   <div class="introtest">
-    Support
+    Compatability
   </div>
-
+</center>
 </br>
 
 
@@ -293,35 +294,164 @@ div.panel {
 
 <button class="accordion">Requirements</button>
 <div class="panel">
-  <p>•	Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</p>
-  <p>•	Next we need to have chrome browser in those devices with a version not lower than 53, because these Bluetooth web api is supported only in chrome with version more than 53 as of now.</p>
-  <p>•	The chrome://flags/#enable-experimental-web-platform-features flag must be enabled on Linux and Windows. In Chrome OS, Android, and Mac, the GATT Communication API is available without any flag.</p>
-  <p>•	Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</p>
+<ul>
+<li>Primary requirement is we need to have two devices that has Bluetooth support in it and Bluetooth version should be 4.0 which supports BLE.</li>
+<li>Next we need to have chrome browser in those devices with a version not lower than 53, because these Bluetooth web api is supported only in chrome with version more than 53 as of now.</li>
+<li>The <b><i>chrome://flags/#enable-experimental-web-platform-features flag </i></b> must be enabled on Linux and Windows. In Chrome OS, Android, and Mac, the GATT Communication API is available without any flag.</li>
+<li><img src="imgs/webplateform.png"/></li>
+</ul>
 </div>
 
-<button class="accordion">OS compatibility</button>
-<div class="panel">
-  <p>•	Android: Requires Android 6.0 Marshmallow or later.</p>
-<p>•	Mac: Requires OS X Yosemite or later.</p>
-      <p>o	Some MacBooks may not work: Check "About this Mac" / "System Report" / "Bluetooth" and verify that Low Energy is supported.</p>
-<p>•	Linux: Requires Kernel 3.19+ and BlueZ 5.41+ installed. Read How to get Chrome Web Bluetooth working on Linux.</p>
-<p>o	Note that Bluetooth daemon needs to run with experimental interfaces if BlueZ version is lower than 5.43: sudo /usr/sbin/bluetoothd -E</p>
-<p>•	Windows: Requires Windows 8.1 or later.</p>
-<p>o	To discover devices the user hasn't yet manually paired, requires Windows 10.</p>
-<p>o	A third-party Windows 10 Polyfill (Chrome Extension + Native Executable) has been created while Windows support is not implemented yet.</p>
 
-</div>
 
 <button class="accordion">Unsupported platforms</button>
 <div class="panel">
-  <p>•	Android WebView: Will be supported in the future.</p>
-<p>•	iOS: Uses the web exposed APIs as provided by the WKWebView, no implementation planned in the Chromium codebase.</p>
-<p><b>Note:</b> WebBLE is an app for iOS that supports the GATT Communication API. It was created initially for the Puck.js project.</p>
-
+  <ul>
+<li>Android WebView </li>
+<li>iOS</li>
+</ul>
 </div>
 
 </div>
-</center>
+
+
+<div class="container" style="color:#a65959; font-size:30px;">
+  <h2>Version Available</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Browser</th>
+        <th>Introduced</th>
+        <th>Present</th>
+        <th>Enhancement</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+              <td> Used</td>
+              <td>in</td>
+              <td>Working</td>
+              <td> Info</td>
+            </tr>
+      <tr class="success">
+        <td>Chrome</td>
+        <td>Chrome 56</td>
+        <td>Chrome 60</td>
+        <td>Yes</td>
+      </tr>
+      <tr class="danger">
+        <td>Safari</td>
+        <td>Not Supported </td>
+        <td>Not Supported </td>
+        <td>Not Supported </td>
+      </tr>
+      <tr class="info">
+        <td>Fire Fox</td>
+        <td>Not Supported </td>
+        <td>Not Supported </td>
+        <td>Not Supported </td>
+      </tr>
+      <tr class="warning">
+        <td>Opera</td>
+        <td>Opera 43</td>
+        <td>Opera 47</td>
+        <td>No</td>
+      </tr>
+      <tr class="active">
+        <td>Microsoft Edge</td>
+        <td>Not Supported </td>
+        <td>Not Supported </td>
+        <td>Not Supported </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+</br>
+
+<div class="container" style="color:#a65959; font-size:30px;">
+  <h2>Operating System</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Browser</th>
+        <th>Windows</th>
+        <th>Linux</th>
+        <th>IOS(MAC)</th>
+        <th>Android 6 (Marshmallow)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+              <td> Used</td>
+              <td>in</td>
+              <td>Working</td>
+              <td> Info</td>
+            </tr>
+      <tr class="success">
+        <td>Chrome</td>
+        <td>Available</td>
+        <td>Available</td>
+        <td>Available</td>
+        <td>Available</td>
+      </tr>
+      <tr class="danger">
+        <td>Safari</td>
+        <td>Available</td>
+        <td>Not Available </td>
+        <td>Available</td>
+        <td>Not Available </td>
+      </tr>
+      <tr class="info">
+        <td>Fire Fox</td>
+        <td>Available</td>
+        <td>Available</td>
+        <td>Available</td>
+        <td>Available</td>
+      </tr>
+      <tr class="warning">
+        <td>Opera</td>
+        <td>Available</td>
+        <td>Available</td>
+        <td>Available</td>
+        <td>Available</td>
+      </tr>
+      <tr class="active">
+        <td>Microsoft Edge</td>
+        <td>Available</td>
+        <td>Not Available </td>
+        <td>Not Available </td>
+        <td>Not Available </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+</div>
+
+<div style="color:#867979; font-size:30px;">
+<h3>  Compatibility with Web Bluetooth Google chrome browser has all built in features required for web Bluetooth API </h3>
+</div>
+
+</br>
+<div style="color:#a65959; font-size:30px;">
+  Reference:
+</div>
+</br>
+<div style="color:#996666; font-size:20px;">
+<a href="https://www.chromestatus.com/feature/5264933985976320">https://www.chromestatus.com/feature/5264933985976320 </a></br>
+<a href="https://whatwebcando.today/bluetooth.html">https://whatwebcando.today/bluetooth.html</a> </br>
+<a href="https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webbluetooth/?q=blu">https://developer.microsoft.com/en-us/microsoft-edge/platform/status/webbluetooth/?q=blu </a> </br>
+<a href="https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md">https://github.com/WebBluetoothCG/web-bluetooth/blob/master/implementation-status.md </a> </br>
+
+</div>
+
+
+
 <!-- Content Here -->
 </div>
 

@@ -10,6 +10,7 @@
 
       background: url("imgs/dw.jpg") no-repeat center center fixed;
       background-size: cover;
+      overflow-x: hidden;
 
 
 	 }
@@ -220,7 +221,7 @@ h1 {
  user-select:none;
 }
 
-h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
+/*h1 span { display:inline-block; animation:float .2s ease-in-out infinite; }
  @keyframes float {
   0%,100%{ transform:none; }
   33%{ transform:translateY(-1px) rotate(-2deg); }
@@ -250,7 +251,7 @@ h1 span:nth-child(10){ animation-delay:.45s; }
 h1 span:nth-child(11){ animation-delay:.5s; }
 h1 span:nth-child(12){ animation-delay:.55s; }
 h1 span:nth-child(13){ animation-delay:.6s; }
-h1 span:nth-child(14){ animation-delay:.65s; }
+h1 span:nth-child(14){ animation-delay:.65s; }*/
 
 </style>
 
@@ -271,15 +272,14 @@ h1 span:nth-child(14){ animation-delay:.65s; }
 		<div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1" style="background-image:yt.jpg">
 			<ul class="nav navbar-nav">
 				<li><a href="index.html">Home<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
-				<li ><a href="intro.html">Intro<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-user"></span></a></li>
-				<li ><a href="support.html">Support<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
-        <li ><a href="compartability.html">Compartability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
 
-				<<li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li>
+				<li ><a href="support.html">Compatability<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-link"></span></a></li>
+
+
+				<<li><a href="gatt.html">GATT<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-info-sign"></span></a></li>
         <li><a href="promises.html">Promises<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-book"></span></a></li>
-				<li><a href="testcases.html">Test Cases<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
-        <li><a href="failure.html">Failure<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-down"></span></a></li>
-				<li  class="active"><a href="success.html">Success<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
+				<li><a href="testcases.html">How It Works<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-pencil"></span></a></li>
+				<li  class="active"><a href="success.html">Zero To Hero<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-thumbs-up"></span></a></li>
         <li ><a href="conclusion.html">Conclusion<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-envelope"></span></a></li>
 				<li >
 
@@ -292,22 +292,91 @@ h1 span:nth-child(14){ animation-delay:.65s; }
 <div class="main">
 <center>
   <div class="introtest">
-  <h1><span>S</span><span>U</span><span>C</span><span>C</span><span>E</span><span>S</span><span>S</span></span></h1>
+  <h1>Zero To <span>H</span><span>E</span><span>R</span><span>O</span></h1>
   </div>
 
 <br/><br/></br>
-
-  <div style="color:#2aec09; font-size:15px;">
-    <h2>Week-3</h2>
-  </div>  <br/>
-  <div>
-    <p style="color:#1dc5a8; font-size:25px;">Got platform ready for development. <br/>
-Got device name and battery level program correct  </br>
-Trying for retrieving glucose values from glucometer  </br>
-Trying retrieving heart rate from heartrate monitor  </br>
-  </div>
-
 </center>
+
+<div style="color:#a65959; font-size:30px;" >
+Browser:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>Tried executing demo <a href="https://googlechrome.github.io/samples/web-bluetooth/">code(link)</a> on browsers that support web Bluetooth API Chrome, Opera.</li>
+  <li>Issues found during execution that gave no output.</li>
+</ul>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Issues:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>Operating system version and browser compatibility issues.</li>
+</ul>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+How we Resolved:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>Tried executing same demo code in different versions of windows 10 like Enterprise edition, home basic, patch versions, professional.
+     Its observed that the code works good in Windows 10 Creators Update (version 1703 / build 15063) with polyfill extension has to be added in browser.</li>
+</ul>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Polyfill:
+</div></br>
+<div style="color:white; font-size:15px;">
+<ul>
+  <li>A polyfill is a browser fallback, made in JavaScript, that allows functionality you expect to work in modern browsers to work in older browsers,
+    e.g., to support Web Bluetooth API related issues in modern browsers.</li>
+</ul>
+</div>
+
+<div style="color:white; font-size:20px;">
+<p><b><i>URL:</i></b><a href="https://github.com/urish/web-bluetooth-polyfill"> https://github.com/urish/web-bluetooth-polyfill </a></p>
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Find version in windows in command prompt winver (To know your version of windows)</p>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Success1:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Tried executing the demo code on windows10 Creators update version with Polyfill extension in chrome version63.
+     It worked perfectly on the demo code. All execution is done using Simulator application</p>
+    <p> But Polyfill will work on internet mode and on offline mode it is not possible to get its full feature.
+      So it mandated to search for new platform, such that the code will work on offline mode too.</p>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Success2:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Tried executing development code on android platform OS version above M, execution is done using GitHub.
+    It worked perfectly on development code. All execution is done using Simulator application</p>
+</div>
+
+<div style="color:#a65959; font-size:30px;" >
+Success3:
+</div></br>
+<div style="color:white; font-size:15px;">
+  <p>Tried executing development Heart¬_Rate code on Ubuntu platform,
+     execution is done using GitHub. It worked perfectly on development code. All execution is done using Simulator application </p>
+</div>
+
+<div style="color:white; font-size:20px;">
+<p><b><i>URL:</i></b><a href="https://rajeshk486.github.io/POC/Web-bluetooth-example-Battery-Heart-rate--master/"> https://rajeshk486.github.io/POC/Web-bluetooth-example-Battery-Heart-rate--master/ </a></p>
+</div></br>
+
+
+
+
 <!-- Content Here -->
 </div>
 
